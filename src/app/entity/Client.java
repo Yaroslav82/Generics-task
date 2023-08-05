@@ -1,11 +1,11 @@
 package app.entity;
 
-public class Client<K,V> {
+public class Client<K, V> {
 
-    private final key;
+    private final K key;
     private final V value;
 
-    public Client(K key, value) {
+    public Client(K key, V value) {
         this.key = key;
         this.value = value;
     }
