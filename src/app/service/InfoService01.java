@@ -11,16 +11,16 @@ public class InfoService01 {
     String email;
 
     public String getData() {
-       return formData(getInputs());
+        return formData(getInputs());
     }
 
-    private Client<Integer> getInputs() {
+    private Client<String, String> getInputs() {
         scanner = new Scanner(System.in);
         System.out.print("Enter client's name: ");
         name = scanner.nextLine();
         System.out.print("Enter client's email: ");
         email = scanner.nextLine();
-        return new Client(name, email);
+        return new Client<>(name, email);
     }
 
     private String formData(Client<String, String> client) {
