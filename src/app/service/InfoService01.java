@@ -24,7 +24,7 @@ public class InfoService01 {
     }
 
     private String formData(Client<String, String> client) {
-        return "Client's name is " + client.getKey() +
-                ", email is " + client.getValue();
+        return "Client's name is " + client.key() +
+                ", email is " + client.value();
     }
 }
