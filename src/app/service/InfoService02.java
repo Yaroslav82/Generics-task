@@ -5,17 +5,14 @@ import app.utils.Rounder;
 
 import java.util.Scanner;
 
-public class InfoService02 {
+public class InfoService02 extends InfoService<String, Double> {
 
     Scanner scanner;
     String name;
     double amount;
 
-    public String getData() {
-        return formData(getInputs());
-    }
-
-    private Client<String, Double> getInputs() {
+    @Override
+    protected Client<String, Double> getInputs() {
         scanner = new Scanner(System.in);
         System.out.print("Enter client's phone: ");
         name = scanner.nextLine();
@@ -24,7 +21,8 @@ public class InfoService02 {
         return new Client<>(name, amount);
     }
 
-    private String formData(Client<String, Double> client) {
+    @Override
+    protected String formData(Client<String, Double> client) {
         String amountRounded = Rounder.roundValue(client.value());
         return "Client's phone is " + client.key() +
                 ", purchase amount is USD " + amountRounded;
