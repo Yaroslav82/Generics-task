@@ -15,7 +15,7 @@ public class InfoService02 {
         return formData(getInputs());
     }
 
-    private Client<String, String> getInputs() {
+    private Client<String, Double> getInputs() {
         scanner = new Scanner(System.in);
         System.out.print("Enter client's phone: ");
         name = scanner.nextLine();
