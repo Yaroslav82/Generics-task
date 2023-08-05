@@ -4,7 +4,7 @@ import app.entity.Client;
 
 import java.util.Scanner;
 
-public class InfoService01 {
+public class InfoService01 extends InfoService<String, String> {
 
     Scanner scanner;
     String name;
@@ -14,7 +14,8 @@ public class InfoService01 {
         return formData(getInputs());
     }
 
-    private Client<String, String> getInputs() {
+    @Override
+    protected Client<String, String> getInputs() {
         scanner = new Scanner(System.in);
         System.out.print("Enter client's name: ");
         name = scanner.nextLine();
@@ -23,7 +24,8 @@ public class InfoService01 {
         return new Client<>(name, email);
     }
 
-    private String formData(Client<String, String> client) {
+    @Override
+    protected String formData(Client<String, String> client) {
         return "Client's name is " + client.key() +
                 ", email is " + client.value();
     }
