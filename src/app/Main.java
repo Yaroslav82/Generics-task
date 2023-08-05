@@ -1,5 +1,6 @@
 package app;
 
+import app.service.InfoService01;
 import app.service.InfoService02;
 
 import java.util.Scanner;
@@ -23,7 +24,7 @@ public class Main {
     private static String getData(int option) {
         String data;
         switch (option) {
-            case 1 -> data = InfoService01().getData();
+            case 1 -> data = new InfoService01().getData();
             case 2 -> data = new InfoService02().getData();
             default -> data = "No data";
         }
